@@ -66,13 +66,34 @@ def main():
 	#Funnel Paths setup
 	
 	
+	#each funnel path has a dictionary of IP addresses to steps/options that the IP address is currently oni n that funnel path.
+	funnelPathTracker ={
+		0: {},
+		1: {}		
+	}
+	
+	#each funnel path is a dictionary entry that corresponds to a dictionary of each URL in the path
+	funnelPathRegexDict={
+		0: {
+			0: [r'http://www.heyzap.com/'],
+			1: [r'http://www.heyzap.com/publishers/new_site'],
+			2: [r'http://www.heyzap.com/publishers/get_embed']
+		},
+		1: {
+			0: [r'http://www.heyzap.com/'],
+			1: [r'http://www.heyzap.com/developers'],
+			2: [r'http://www.heyzap.com/developers/new_game'],
+			3: [r'http://www.heyzap.com/developers/import_games', r'http://www.heyzap.com/developers/new_inventory_item', r'http://www.heyzap.com/developers/upload_game_simple']
+		}
+	}
 	
 	
-	
-	
-	
-	
-	
+	#a dictionary entry for each funnel path, where each entry is:
+		#a dictionary entry between the step number in this funnel and the number of users who fell off at this step:option
+	fellOffAtFunnelPathStepAndOption={
+		0:{0:{0:0},1:{0:0},2:{0:0}},
+		1:{0:{0:0},1:{0:0},2:{0:0},2:{0:0,1:0,2:0}}
+	}
 	
 	
 	
@@ -113,6 +134,9 @@ def main():
 				else:
 					ipAddress = ipAddress.group(0)
 					#print ipAddress
+				
+				#~~~~~~
+				#Counters
 				for line in hitText:
 					#print line
 					for key in pageIdToRegexDict.keys():
@@ -129,10 +153,15 @@ def main():
 								uniqueVisits[key]+=1
 							totalVisits[key]+=1
 							
+				#~~~~~~~~~
+				#Funnels
+				
+				
+				
 							
-						#else:
-							#print 'miss on key: ' + str(pageIdToRegexDict[key])
-				#print "done searching keys"
+				
+				
+				
 				hitText=[]
 		quit = True
 	

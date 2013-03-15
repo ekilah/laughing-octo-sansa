@@ -21,13 +21,17 @@ Observations:
 	
 	
 	
+ Game plays:
+ 	Parameters: {"permalink"=>"[A-z0-9-]+", "embed_key"=>"12affbbace", "action"=>"index", "controller"=>"heyzap".*}
+ 	to match: Parameters: {"permalink"=>"gemcraft-chapter-0-2", "embed_key"=>"12affbbace", "action"=>"index", "controller"=>"heyzap", "embed"=>"1"}
+ 	
+ 	
+ 	
 
 Funnels
 ------------------
 
 	For each array of URLs (each one a funnel path) in an array of these funnel paths, keep a hash table of (IP address, currentStepInFunnelPath{path, step}) where currentStepInFunnelPath keeps track of which step the user at that IP address is on within it's current funnel path. One IP address can only be on one path at a time, since the path ends when they do not visit the next IP address in the path. 
 
+ Since GET and POSTs can be sent/received from same address, must allow a path to continue if the same site comes up more than once in a row.
  
- Game plays:
- 	Parameters: {"permalink"=>"[A-z0-9-]+", "embed_key"=>"12affbbace", "action"=>"index", "controller"=>"heyzap".*}
- 	to match: Parameters: {"permalink"=>"gemcraft-chapter-0-2", "embed_key"=>"12affbbace", "action"=>"index", "controller"=>"heyzap", "embed"=>"1"}
