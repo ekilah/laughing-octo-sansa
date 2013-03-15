@@ -33,3 +33,10 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+
+#monroe added
+*.pdf
+*.*~
+*.6
+*.log
+

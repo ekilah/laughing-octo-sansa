@@ -1,0 +1,33 @@
+Design
+
+
+Counters
+-----------------
+
+Unique visitor count:
+	For each link in an array of links given (via input file or hard-coded), keep a hash table (dictionary in Python) that maps IP address to number of requests. Only increment a counter if hash table didn't have an entry before for this IP.
+	
+Total visit count:
+	For each link in an array of links given, every time something is checked in the "unique" case, just increment another counter regardless of whether or not that IP address has already visited on this day.
+	
+
+Front page and payments page should be found strictly by URL. Payments item lookup should be found via regex that allows for a pattern:
+	[http://www.heyzap.com/payments/get_item/?cb=[\d]+]
+	
+
+Observations:
+	- HTTPS never used for www.heyzap.com hits
+	- URL always prefixed with "http://www." (www is always included)
+	
+	
+	
+
+Funnels
+------------------
+
+	For each array of URLs (each one a funnel path) in an array of these funnel paths, keep a hash table of (IP address, currentStepInFunnelPath{path, step}) where currentStepInFunnelPath keeps track of which step the user at that IP address is on within it's current funnel path. One IP address can only be on one path at a time, since the path ends when they do not visit the next IP address in the path. 
+
+ 
+ Game plays:
+ 	Parameters: {"permalink"=>"[A-z0-9-]+", "embed_key"=>"12affbbace", "action"=>"index", "controller"=>"heyzap".*}
+ 	to match: Parameters: {"permalink"=>"gemcraft-chapter-0-2", "embed_key"=>"12affbbace", "action"=>"index", "controller"=>"heyzap", "embed"=>"1"}
