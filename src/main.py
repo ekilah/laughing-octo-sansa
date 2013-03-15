@@ -8,7 +8,7 @@
 
 
 import re #regular expressions
-
+import sys #argv
 
 
 def main():
@@ -112,7 +112,11 @@ def main():
 	#print pageCounters
 	#print uniqueVisits
 	
-	logFile = open('../log/production.log.6', 'r')
+	if len(sys.argv)>1:
+		logFile = open(sys.argv[1], 'r')#command line arg for log file
+	else:
+		logFile = open('../log/production.log.6', 'r')#default if no file provided
+		
 	#logFile = open('../log/oneFunnelTest.log', 'r')
 	logFile.readline()
 	logFile.readline()#get rid of first newlines in log file (assumed to always be there)
