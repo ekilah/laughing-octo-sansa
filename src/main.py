@@ -261,7 +261,7 @@ def main():
 	#print totalVisits
 	
 	print "\nMonroe Ekilah's HeyZap Internship Coding Challenge"
-	print "\n\n--------->NOTE: I ran out of time to fully test the funnels, or to migrate those paths left\n\
+	print "\n\n-------->NOTE: I ran out of time to fully test the funnels, or to migrate those paths left\n\
 	 hanging (funnels in progress) at the end of the log file to my dictionary of paths that didn't\n\
 	 finish. However, this latter flaw may or may not represent the desired effect, since maybe\n\
 	 midnight just rolled around and lots of people are using the app still. Regardless, I ran out\n\
@@ -293,25 +293,25 @@ def main():
 		for j in fellOffAtFunnelPathStepAndOption[0][i].keys():
 			print "\tFell off at step #" + str(i+1) + ", option #"+str(j+1)+": " + str(fellOffAtFunnelPathStepAndOption[0][i][j])
 	
-	print "\nNumber of unique 'Devs' funnel paths (Option #1: import_games):"
+	print "\nNumber of 'Devs' funnel paths (Option #1: import_games):"
 	print "-----------------------------------------------------------------"
-	print "\tCompleted: " + str(len(completedFunnelPathAtOption[1][0].keys()))
-	for i in fellOffAtFunnelPathStepAndOption[1].keys():
-		print "\tFell off at step #" + str(i+1) + ", option #"+str(1)+": " + str(fellOffAtFunnelPathStepAndOption[1][i][0])
+	print "\tUnique IPs completed: " + str(len(completedFunnelPathAtOption[1][0].keys()))
+	print "\tFell off at step #1, option #1: " + str(fellOffAtFunnelPathStepAndOption[1][0][0])
+	print "\tFell off at step #2, option #1: " + str(fellOffAtFunnelPathStepAndOption[1][1][0])
 	print "\n\tNote: first two steps of the above are the same for the rest of the Dev funnels, and weren't repeated.\n"
-	print "\nNumber of unique 'Devs' funnel paths (Option #2: new_inventory_item):"
+	print "\nNumber of 'Devs' funnel paths (Option #2: new_inventory_item):"
 	print "-----------------------------------------------------------------------"
-	print "\tCompleted: " + str(len(completedFunnelPathAtOption[1][1].keys()))
-	print "\tFell off at step #" + str(3) + ", option #"+str(2)+": " + str(fellOffAtFunnelPathStepAndOption[1][2][1])
+	print "\tUnique IPs completed: " + str(len(completedFunnelPathAtOption[1][1].keys()))
+	#print "\tFell off at step #" + str(3) + ", option #"+str(2)+": " + str(fellOffAtFunnelPathStepAndOption[1][2][1])
 	
-	print "\nNumber of unique 'Devs' funnel paths (Option #3: upload_game_simple):"
+	print "\nNumber of 'Devs' funnel paths (Option #3: upload_game_simple):"
 	print "----------------------------------------------------------------------"
-	print "\tCompleted: " + str(len(completedFunnelPathAtOption[1][2].keys()))
-	print "\tFell off at step #" + str(3) + ", option #"+str(3)+": " + str(fellOffAtFunnelPathStepAndOption[1][2][2])
+	print "\tUnique IPs completed: " + str(len(completedFunnelPathAtOption[1][2].keys()))
+	#print "\tFell off at step #" + str(3) + ", option #"+str(3)+": " + str(fellOffAtFunnelPathStepAndOption[1][2][2])
 	
 	
 	print"\n\n\tThis was a very interesting challenge! I had to spend a decent amount of extra time\n\
-	brushing up on my Python skills before hand, because I've only used it sparingly in the\n\
+	brushing up on my Python skills beforehand, because I've only used it sparingly in the\n\
 	past, so please excuse me if I did some naive things here. It is still a fairly new language to me!\n\n"
 
 	
